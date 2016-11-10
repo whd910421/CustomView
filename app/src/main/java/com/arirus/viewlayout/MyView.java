@@ -1,12 +1,17 @@
 package com.arirus.viewlayout;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 public class MyView extends View {
+    Paint mBackgroundPaint ;
+    Paint mLinePaint;
 
     public MyView(Context context) {
         super(context);
@@ -14,12 +19,26 @@ public class MyView extends View {
 
     public MyView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mBackgroundPaint = new Paint();
+        mBackgroundPaint.setColor(Color.RED);
+
+        mLinePaint = new Paint();
+        mLinePaint.setColor(Color.BLACK);
     }
 
     public MyView(Context context, AttributeSet attrs,
                   int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
+    @Override
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+
+        canvas.drawPaint(mBackgroundPaint);
+        canvas.drawLine(0,0,50,500,mLinePaint);
+    }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -36,7 +55,7 @@ public class MyView extends View {
             result = specSize;
         else
         {
-            result = 100;
+            result = 200;
             if (specMode == MeasureSpec.AT_MOST)
             {
                 result = Math.min(result, specSize);
