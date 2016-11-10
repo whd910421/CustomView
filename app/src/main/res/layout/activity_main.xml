@@ -24,6 +24,19 @@
                 android:background="@android:color/darker_gray"
                 />
 
+            <!--<TextView-->
+                <!--android:text="TextView"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/textView"-->
+                <!--android:textSize="20dp"/>-->
+            <com.arirus.viewlayout.CustomTextView
+                android:text="Android"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </com.arirus.viewlayout.MyViewGroupB>
 
     </com.arirus.viewlayout.MyViewGroupA>

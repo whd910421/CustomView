@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -36,6 +37,7 @@ public class MyView extends View {
         super.draw(canvas);
 
         canvas.drawPaint(mBackgroundPaint);
+        mLinePaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         canvas.drawLine(0,0,50,500,mLinePaint);
     }
 
