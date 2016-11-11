@@ -42,7 +42,7 @@ public class CustomRainbowTextView extends TextView {
             if (mViewWidth> 0)
             {
                 mPaint = getPaint();
-                mLinearGradient = new LinearGradient(0,0,mViewWidth,0,new int[]{Color.BLUE,0xffffffff,Color.BLUE},null, Shader.TileMode.CLAMP);
+                mLinearGradient = new LinearGradient(0,0,mViewWidth,0,new int[]{Color.BLUE,Color.WHITE,Color.YELLOW,Color.RED,},null, Shader.TileMode.MIRROR);
                 mPaint.setShader(mLinearGradient);
                 mGradientMatrix = new Matrix();
             }
@@ -59,7 +59,7 @@ public class CustomRainbowTextView extends TextView {
             }
             mGradientMatrix.setTranslate(mTranslate, 0);
             mLinearGradient.setLocalMatrix(mGradientMatrix);
-            postInvalidateDelayed(2000);
+            postInvalidateDelayed(100);
         }
     }
 }
