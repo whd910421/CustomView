@@ -3,7 +3,9 @@ package com.arirus.viewlayout;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -13,6 +15,9 @@ import android.view.View;
 public class MyView extends View {
     Paint mBackgroundPaint ;
     Paint mLinePaint;
+
+    LinearGradient mLinearGradient;
+
 
     public MyView(Context context) {
         super(context);
@@ -41,6 +46,12 @@ public class MyView extends View {
         canvas.drawLine(0,0,50,500,mLinePaint);
     }
 
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        mLinearGradient = new LinearGradient(0,0,getMeasuredWidth()/2,getMeasuredHeight()/2,new int []{Color.BLUE,Color.WHITE, Color.RED},null, Shader.TileMode.MIRROR);
+        mBackgroundPaint.setShader(mLinearGradient);
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -66,6 +77,8 @@ public class MyView extends View {
 
         return result;
     }
+
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
