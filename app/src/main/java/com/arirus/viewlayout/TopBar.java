@@ -170,4 +170,51 @@ public class TopBar extends RelativeLayout {
         void rightClick();
     }
 
+//    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        measureChildren(widthMeasureSpec, heightMeasureSpec);
+//        //调用View类中默认的测量方法
+//        super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+//    }
+
+//    private int measureWidth(int widthMeasureSpec)
+//    {
+//        int result = 0;
+//        int specMode = MeasureSpec.getMode(widthMeasureSpec);
+//        int specSize = MeasureSpec.getSize(widthMeasureSpec);
+//
+//        if (specMode == MeasureSpec.EXACTLY)
+//            result = specSize;
+//        else
+//        {
+//            result = 200;
+//            if (specMode == MeasureSpec.AT_MOST)
+//            {
+//                result = Math.min(result, specSize);
+//            }
+//        }
+//        Log.i("11111",String.valueOf(result));
+//        return result;
+//    }
+//
+//    private int measureHeight(int heightMeasureSpec )
+//    {
+//        int result = 0;
+//        int specMode = MeasureSpec.getMode(heightMeasureSpec);
+//        int specSize = MeasureSpec.getSize(heightMeasureSpec);
+//
+//        if (specMode == MeasureSpec.EXACTLY)
+//            result = specSize;
+//        else
+//        {
+//            result = 200;
+//            if (specMode == MeasureSpec.AT_MOST)
+//            {
+//                result = Math.min(result, specSize);
+//            }
+//        }
+//        Log.i("222222",String.valueOf(result));
+//        return result;
+//    }
+
 }

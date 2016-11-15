@@ -5,7 +5,7 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/topBar"
     android:layout_width="match_parent"
-    android:layout_height="30dp"
+    android:layout_height="50dp"
     custom:leftBackground="@drawable/ic_back"
     custom:leftText="Back"
     custom:leftTextColor="#FFFFFF"
