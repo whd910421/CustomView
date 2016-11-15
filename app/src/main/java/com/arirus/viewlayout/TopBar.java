@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,10 @@ public class TopBar extends RelativeLayout {
     private float mTitleTextSize;
     private String mTitleString;
 
-    private topbarClickListener mListener;
+    private LayoutParams mLeftParams, mTitlepParams, mRightParams;
+
+
+    private topbarClickListener mListener = null;
 
     public TopBar(Context context) {
         super(context);
@@ -86,25 +90,25 @@ public class TopBar extends RelativeLayout {
         mTitle.setTextSize(mTitleTextSize);
         mTitle.setGravity(Gravity.CENTER);
 
-//        // 为组件元素设置相应的布局元素
-//        mLeftParams = new LayoutParams(
-//                LayoutParams.WRAP_CONTENT,
-//                LayoutParams.MATCH_PARENT);
-//        mLeftParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT, TRUE);
-//        // 添加到ViewGroup
-//        addView(mLeftButton, mLeftParams);
-//
-//        mRightParams = new LayoutParams(
-//                LayoutParams.WRAP_CONTENT,
-//                LayoutParams.MATCH_PARENT);
-//        mRightParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, TRUE);
-//        addView(mRightButton, mRightParams);
-//
-//        mTitlepParams = new LayoutParams(
-//                LayoutParams.WRAP_CONTENT,
-//                LayoutParams.MATCH_PARENT);
-//        mTitlepParams.addRule(RelativeLayout.CENTER_IN_PARENT, TRUE);
-//        addView(mTitleView, mTitlepParams);
+        // 为组件元素设置相应的布局元素
+        mLeftParams = new LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT);
+        mLeftParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT, TRUE);
+        // 添加到ViewGroup
+        addView(mLeftButton, mLeftParams);
+
+        mRightParams = new LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT);
+        mRightParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, TRUE);
+        addView(mRightButton, mRightParams);
+
+        mTitlepParams = new LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.MATCH_PARENT);
+        mTitlepParams.addRule(RelativeLayout.CENTER_IN_PARENT, TRUE);
+        addView(mTitle, mTitlepParams);
 
         // 按钮的点击事件，不需要具体的实现，
         // 只需调用接口的方法，回调的时候，会有具体的实现
@@ -112,6 +116,7 @@ public class TopBar extends RelativeLayout {
 
             @Override
             public void onClick(View v) {
+                if (mListener == null) return;
                 mListener.rightClick();
             }
         });
@@ -120,6 +125,8 @@ public class TopBar extends RelativeLayout {
 
             @Override
             public void onClick(View v) {
+                Log.i("ddddd","ddddddd");
+                if (mListener == null) return;
                 mListener.leftClick();
             }
         });
@@ -162,4 +169,5 @@ public class TopBar extends RelativeLayout {
         // 右按钮点击事件
         void rightClick();
     }
+
 }

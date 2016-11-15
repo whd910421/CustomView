@@ -41,14 +41,15 @@ public class MyView extends View {
     public void draw(Canvas canvas) {
         super.draw(canvas);
 
-        canvas.drawPaint(mBackgroundPaint);
-        mLinePaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-        canvas.drawLine(0,0,50,500,mLinePaint);
+
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.drawPaint(mBackgroundPaint);
+        mLinePaint.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        canvas.drawLine(0,0,50,500,mLinePaint);
         mLinearGradient = new LinearGradient(0,0,getMeasuredWidth()/2,getMeasuredHeight()/2,new int []{Color.BLUE,Color.WHITE, Color.RED},null, Shader.TileMode.MIRROR);
         mBackgroundPaint.setShader(mLinearGradient);
     }
