@@ -7,10 +7,12 @@
     tools:context=".MainActivity">
 
     <!--<include layout="@layout/topbar"/>-->
-
-    <com.arirus.viewlayout.CombinView
+    <com.arirus.viewlayout.VolumeView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    <!--<com.arirus.viewlayout.CombinView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
     <!--<com.arirus.viewlayout.MyViewGroupA-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
