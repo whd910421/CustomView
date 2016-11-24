@@ -33,7 +33,7 @@ public class CustomTextView extends TextView {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void onDraw(Canvas canvas) {
 
         mInnerPaint = new Paint();
         mOuterPaint = new Paint();
@@ -44,12 +44,12 @@ public class CustomTextView extends TextView {
         mOuterPaint.setColor(Color.YELLOW);
         mOuterPaint.setStyle(Paint.Style.FILL);
 
-        canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),mInnerPaint);
-        canvas.drawRect(10,10,getMeasuredWidth()-10,getMeasuredHeight()-10,mOuterPaint);
+        canvas.drawRect(0,0,getMeasuredWidth()+10,getMeasuredHeight()+10,mInnerPaint);
+        canvas.drawRect(10,10,getMeasuredWidth(),getMeasuredHeight(),mOuterPaint);
 
         canvas.save();
-        canvas.translate(10,0);
-        super.draw(canvas);
+//        canvas.translate(100,0);
+        super.onDraw(canvas);
         canvas.restore();
     }
 }

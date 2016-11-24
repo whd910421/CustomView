@@ -6,10 +6,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ListView
+        android:id="@+id/activity_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ListView>
     <!--<include layout="@layout/topbar"/>-->
-    <com.arirus.viewlayout.VolumeView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <!--<com.arirus.viewlayout.VolumeView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
     <!--<com.arirus.viewlayout.CombinView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"/>-->

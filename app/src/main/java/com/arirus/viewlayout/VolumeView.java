@@ -23,6 +23,8 @@ public class VolumeView extends View {
     private int mHeight;
     private int mWidth;
 
+    private Paint mLinePaint;
+
     public VolumeView(Context context) {
         super(context);
     }
@@ -47,7 +49,11 @@ public class VolumeView extends View {
                 sHight,
                 Color.YELLOW,
                 Color.BLUE,
-                Shader.TileMode.MIRROR));
+                Shader.TileMode.REPEAT));
+
+        mLinePaint = new Paint();
+        mLinePaint.setColor(Color.BLACK);
+        mLinePaint.setStyle(Paint.Style.FILL);
     }
 
     @Override
@@ -69,6 +75,8 @@ public class VolumeView extends View {
         for (int i =1; i<10;i++) {
             canvas.drawRect(sOffset*i+(i-1)*sWitdh, (float) (sHight/5),sOffset*i+i*sWitdh,mHeight,mRactPaint);
         }
+        canvas.drawLine(0,0,sWitdh,sHight,mLinePaint);
+
         postInvalidateDelayed(300);
 //        invalidate();
     }
