@@ -9,11 +9,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:background="@drawable/ic_more"/>
+        android:src="@drawable/ic_more"/>
     <TextView
         android:id="@+id/list_view_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ddddddd"
+        android:layout_weight="1"
+        android:text="dddddddsssssssss"
         android:textSize="20dp"/>
+
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_view_item_checkbox"
+        android:layout_weight="0"/>
 </LinearLayout>
