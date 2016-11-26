@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 public class MyView extends View {
     Paint mBackgroundPaint ;
@@ -18,6 +19,14 @@ public class MyView extends View {
 
     LinearGradient mLinearGradient;
 
+    Paint mTextPaint;
+    String mString;
+
+    public void setString(String s)
+    {
+        mString = s;
+        invalidate();
+    }
 
     public MyView(Context context) {
         super(context);
@@ -30,6 +39,11 @@ public class MyView extends View {
 
         mLinePaint = new Paint();
         mLinePaint.setColor(Color.BLACK);
+
+        mTextPaint = new Paint();
+        mTextPaint.setColor(Color.YELLOW);
+        mTextPaint.setTextSize(50);
+        mTextPaint.setTextAlign(Paint.Align.CENTER);
     }
 
     public MyView(Context context, AttributeSet attrs,
@@ -52,6 +66,8 @@ public class MyView extends View {
         canvas.drawLine(0,0,50,500,mLinePaint);
         mLinearGradient = new LinearGradient(0,0,getMeasuredWidth()/2,getMeasuredHeight()/2,new int []{Color.BLUE,Color.WHITE, Color.RED},null, Shader.TileMode.MIRROR);
         mBackgroundPaint.setShader(mLinearGradient);
+
+        canvas.drawText(mString,getMeasuredWidth()/2,getMeasuredHeight()/2,mTextPaint);
     }
 
     @Override

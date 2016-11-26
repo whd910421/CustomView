@@ -24,4 +24,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/list_view_item_checkbox"
         android:layout_weight="0"/>
+    <com.arirus.viewlayout.MyView
+        android:id="@+id/list_view_item_myview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/list_view_item_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
