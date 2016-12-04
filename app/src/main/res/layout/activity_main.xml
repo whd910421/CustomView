@@ -6,12 +6,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/activity_listview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <!--<ListView-->
+        <!--android:id="@+id/activity_listview"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
-    </ListView>
+    <!--</ListView>-->
     <!--<include layout="@layout/topbar"/>-->
     <!--<com.arirus.viewlayout.VolumeView-->
         <!--android:layout_width="match_parent"-->
@@ -19,36 +19,39 @@
     <!--<com.arirus.viewlayout.CombinView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"/>-->
-    <!--<com.arirus.viewlayout.MyViewGroupA-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:background="@android:color/holo_blue_bright">-->
+    <com.arirus.viewlayout.MyViewGroupA
+        android:id="@+id/mygroupA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_bright">
 
-        <!--<com.arirus.viewlayout.MyViewGroupB-->
-            <!--android:layout_width="300dp"-->
-            <!--android:layout_height="300dp"-->
-            <!--android:background="@android:color/holo_green_dark">-->
+        <com.arirus.viewlayout.MyViewGroupB
+            android:id="@+id/mygroupB"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@android:color/holo_green_dark">
 
-            <!--<com.arirus.viewlayout.MyView-->
+            <com.arirus.viewlayout.MyView
+                android:id="@+id/myview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                />
+
+            <!--<TextView-->
+                <!--android:text="TextView"-->
                 <!--android:layout_width="wrap_content"-->
                 <!--android:layout_height="wrap_content"-->
-                <!--android:background="@android:color/darker_gray"-->
-                <!--/>-->
+                <!--android:id="@+id/textView"-->
+                <!--android:textSize="20dp"/>-->
+            <com.arirus.viewlayout.CustomRainbowTextView
+                android:text="Android"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
-                <!--&lt;!&ndash;android:text="TextView"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:id="@+id/textView"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:textSize="20dp"/>&ndash;&gt;-->
-            <!--<com.arirus.viewlayout.CustomRainbowTextView-->
-                <!--android:text="Android"-->
-                <!--android:textSize="20dp"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"/>-->
+        </com.arirus.viewlayout.MyViewGroupB>
 
-        <!--</com.arirus.viewlayout.MyViewGroupB>-->
-
-    <!--</com.arirus.viewlayout.MyViewGroupA>-->
+    </com.arirus.viewlayout.MyViewGroupA>
 </LinearLayout>

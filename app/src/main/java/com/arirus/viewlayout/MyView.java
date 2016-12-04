@@ -11,9 +11,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MyView extends View {
+public class MyView extends Button {
     Paint mBackgroundPaint ;
     Paint mLinePaint;
 
@@ -67,7 +68,7 @@ public class MyView extends View {
         mLinearGradient = new LinearGradient(0,0,getMeasuredWidth()/2,getMeasuredHeight()/2,new int []{Color.BLUE,Color.WHITE, Color.RED},null, Shader.TileMode.MIRROR);
         mBackgroundPaint.setShader(mLinearGradient);
 
-        canvas.drawText(mString,getMeasuredWidth()/2,getMeasuredHeight()/2,mTextPaint);
+//        canvas.drawText(mString,getMeasuredWidth()/2,getMeasuredHeight()/2,mTextPaint);
     }
 
     @Override
